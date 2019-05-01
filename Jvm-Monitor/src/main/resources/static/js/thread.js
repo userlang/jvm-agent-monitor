@@ -1,4 +1,5 @@
 function thread(data) {
+
     var myChart = echarts.init(document.getElementById('thread'));
     myChart.setOption(option = {
         backgroundColor: background_color,

@@ -19,18 +19,5 @@ public interface ScheduleJobService extends IService<ScheduleJobEntity> {
 
 	int queryTotal(Map<String, Object> map);
 	
-	 /**
-     * 立即执行
-     */
-    void run(Long jobId);
 
-    /**
-     * 暂停运行
-     */
-    void pause(Long jobId);
-
-    /**
-     * 恢复运行
-     */
-    void resume(Long jobId);
 }

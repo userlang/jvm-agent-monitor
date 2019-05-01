@@ -1,12 +1,11 @@
 package com.langjn.monitor.modules.monitor.controller;
 import com.langjn.monitor.common.utils.HttpUtil;
-import com.langjn.monitor.modules.sys.dao.SysActuatorMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.langjn.monitor.modules.platform.dao.PlatformMapper;
+ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
-
 import com.alibaba.fastjson.JSONObject;
 import com.langjn.monitor.modules.monitor.entity.ClassLoadEntity;
 import com.langjn.monitor.modules.monitor.entity.GcEntity;
@@ -29,7 +28,7 @@ public class WebSocketController {
     @Autowired
     private ThreadService threadService;
 	@Autowired
-	private SysActuatorMapper sysActuatorMapper;
+	private PlatformMapper platformMapper;
 	
     /**
      * gc 内存信息
@@ -68,7 +67,7 @@ public class WebSocketController {
 
     /**
      * 日志
-     * @param name
+     * @param
      * @return
      */
     @MessageMapping("/weblog")

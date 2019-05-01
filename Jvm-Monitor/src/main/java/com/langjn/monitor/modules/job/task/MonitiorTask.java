@@ -9,8 +9,9 @@ import com.langjn.monitor.modules.monitor.entity.ThreadEntity;
 import com.langjn.monitor.modules.monitor.service.ClassService;
 import com.langjn.monitor.modules.monitor.service.GcService;
 import com.langjn.monitor.modules.monitor.service.ThreadService;
-import com.langjn.monitor.modules.sys.dao.SysActuatorMapper;
-import com.langjn.monitor.modules.sys.entity.SysActuatorEntity;
+import com.langjn.monitor.modules.platform.dao.PlatformMapper;
+
+import com.langjn.monitor.modules.platform.entity.PlatformEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -32,14 +33,14 @@ public class MonitiorTask {
 	@Autowired
 	private ThreadService threadService;
 	@Autowired
-	private SysActuatorMapper sysActuatorMapper;
+	private PlatformMapper platformMapper;
 
 	/**
 	 * jvm gc和内存收信息收集
 	 */
 	@Scheduled(cron="0 * * * * ?")
 	public void pullGc(){
-    	List<SysActuatorEntity> list=sysActuatorMapper.selectList(null);
+    	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		 String url=i.getUrl();
              JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/gc"));
@@ -70,7 +71,7 @@ public class MonitiorTask {
      */
 	@Scheduled(cron="0 * * * * ?")
 	public void pullThread(){
-    	List<SysActuatorEntity> list=sysActuatorMapper.selectList(null);
+    	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		String url=i.getUrl();
     		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/thread"));
@@ -87,7 +88,7 @@ public class MonitiorTask {
      */
 	@Scheduled(cron="0 * * * * ?")
 	public void pullClassload(){
-    	List<SysActuatorEntity> list=sysActuatorMapper.selectList(null);
+    	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		String url=i.getUrl();
     		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/classload"));

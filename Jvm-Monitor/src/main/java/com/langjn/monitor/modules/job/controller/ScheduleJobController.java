@@ -110,24 +110,7 @@ public class ScheduleJobController {
         return Res.ok();
     }
 
-    /**
-     * 暂停定时任务
-     */
 
-    @RequestMapping("/pause")
-    @ResponseBody
-    public Res pause(Long jobId) {
-        scheduleJobService.pause(jobId);
-        return Res.ok();
-    }
 
-    /**
-     * 恢复定时任务
-     */
-    @RequestMapping("/resume")
-    @ResponseBody
-    public Res resume(Long jobId) {
-        scheduleJobService.resume(jobId);
-        return Res.ok();
-    }
+
 }

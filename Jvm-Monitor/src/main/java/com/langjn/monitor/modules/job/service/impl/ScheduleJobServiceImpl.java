@@ -18,27 +18,8 @@ import com.langjn.monitor.modules.job.utils.ScheduleUtils;
 public class ScheduleJobServiceImpl extends ServiceImpl<ScheduleJobMapper, ScheduleJobEntity> implements ScheduleJobService {
 	@Autowired
 	private ScheduleJobMapper scheduleJobMapper;
-    @Autowired
-    private Scheduler scheduler;	
 
-	 /**
-     * 项目启动时，初始化定时器
-     */
-    @PostConstruct
-    public void init() {
-//    	scheduleJobMapper.selectList(null);
-//        List<ScheduleJobEntity> scheduleJobList =scheduleJobMapper.selectList(null);
-//        for (ScheduleJobEntity scheduleJob : scheduleJobList) {
-//
-//            CronTrigger cronTrigger = ScheduleUtils.getCronTrigger(scheduler, scheduleJob.getJobId());
-//            //如果不存在，则创建
-//            if (cronTrigger == null) {
-//                ScheduleUtils.createScheduleJob(scheduler, scheduleJob);
-//            } else {
-//                ScheduleUtils.updateScheduleJob(scheduler, scheduleJob);
-//            }
-//        }
-    }
+
 
 	@Override
 	public List<ScheduleJobEntity> queryList(Map<String, Object> map) {
@@ -51,22 +32,6 @@ public class ScheduleJobServiceImpl extends ServiceImpl<ScheduleJobMapper, Sched
 		return scheduleJobMapper.queryTotal(map);
 	}
 
-	@Override
-	public void run(Long jobId) {
-		  ScheduleUtils.run(scheduler,scheduleJobMapper.selectById(jobId));
-		
-	}
 
-	@Override
-	public void pause(Long jobId) {
-		  ScheduleUtils.pauseJob(scheduler, jobId);
-		  scheduleJobMapper.updateStatus(Constant.ScheduleStatus.PAUSE.getValue(), jobId);
-	}
-
-	@Override
-	public void resume(Long jobId) {
-		ScheduleUtils.resumeJob(scheduler, jobId);
-		 scheduleJobMapper.updateStatus(Constant.ScheduleStatus.NORMAL.getValue(), jobId);
-	}
 
 }

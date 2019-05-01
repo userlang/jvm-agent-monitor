@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import com.langjn.javaagent.utils.IPUtils;
+import com.langjn.jvmagent.utils.IPUtils;
 
 
 
@@ -13,7 +13,7 @@ import com.langjn.javaagent.utils.IPUtils;
 @EnableScheduling
 @EnableAsync
 @MapperScan("com.baomidou.mybatisplus.samples.quickstart.mapper")
-@ComponentScan({"com.pflm.**", "com.langjn.javaagent.core"})
+@ComponentScan({"com.pflm.**", "com.langjn.jvmagent.core"})
 public class MonitorApplication {
 
 

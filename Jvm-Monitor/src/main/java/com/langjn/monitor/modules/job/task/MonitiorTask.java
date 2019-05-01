@@ -43,7 +43,7 @@ public class MonitiorTask {
     	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		 String url=i.getUrl();
-             JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/gc"));
+             JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/gc"));
              if(info.getIntValue("code")==0){
             	 GcEntity gc = info.getObject("gc", GcEntity.class);
             	 gc.setS0C(ByteConvKbUtils.getMB(gc.getS0C()));
@@ -74,7 +74,7 @@ public class MonitiorTask {
     	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		String url=i.getUrl();
-    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/thread"));
+    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/thread"));
              if(info.getIntValue("code")==0){
             	 ThreadEntity entity = info.getObject("thread", ThreadEntity.class);
             	 threadService.save(entity);
@@ -91,7 +91,7 @@ public class MonitiorTask {
     	List<PlatformEntity> list=platformMapper.selectList(null);
     	list.forEach(i->{
     		String url=i.getUrl();
-    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/classload"));
+    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/classload"));
              if(info.getIntValue("code")==0){
             	 ClassLoadEntity entity = info.getObject("classload", ClassLoadEntity.class);
             	 entity.setBytes1(ByteConvKbUtils.getMB(entity.getBytes1()));

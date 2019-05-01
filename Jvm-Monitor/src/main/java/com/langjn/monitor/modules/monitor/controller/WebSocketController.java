@@ -73,7 +73,7 @@ public class WebSocketController {
     @MessageMapping("/weblog")
     @SendTo("/topic/weblog")
     public String weblog(String url){
-    	 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/logReader"));
+    	 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+" /jvm_agent/info/logReader"));
     	 if(info.containsKey("result")){
     		 System.err.println(info.getString("result"));
     		 return info.getString("result");

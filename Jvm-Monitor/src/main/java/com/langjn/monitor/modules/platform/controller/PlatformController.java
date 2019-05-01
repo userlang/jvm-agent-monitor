@@ -63,7 +63,7 @@ public class PlatformController {
     	List<JSONObject> server=new ArrayList<>();
     	List<PlatformEntity> list=platformMapper.selectList(null);
     	for(PlatformEntity i:list){
-    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(i.getUrl()+"/actuator/info/systemInfo"));
+    		 JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(i.getUrl()+" /jvm_agent/info/systemInfo"));
     		 info.put("name", i.getName());
     		 info.put("url", i.getUrl());
     		 server.add(info);

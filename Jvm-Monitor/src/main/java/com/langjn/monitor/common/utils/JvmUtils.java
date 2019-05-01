@@ -25,7 +25,7 @@ public class JvmUtils {
 //		Map<String, String> params = new HashMap<String, String>();
 //		params.put("name", "free");
 //		params.put("value", "-m");
-//		JSONObject info = JSONObject.parseObject(HttpUtil.URLGet(url+"/actuator/info/runexec", params,"utf-8"));
+//		JSONObject info = JSONObject.parseObject(HttpUtil.URLGet(url+" /jvm_agent/info/runexec", params,"utf-8"));
 //		String s = info.getString("result");
 //		BufferedReader reader = new BufferedReader(new StringReader(s));
 //		String[] keys = ArrayUtil.trim(reader.readLine().split("\\s+|\t"));

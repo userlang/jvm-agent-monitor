@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 监控应用表
  * 
- * @author qinxuewu
+ *  
  * @email 
  * @date 2018-12-13 11:14:48
  */

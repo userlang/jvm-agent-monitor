@@ -20,13 +20,13 @@ import java.text.SimpleDateFormat;
 
 /**
  *  jvm 性能监控
- * @author qinxuewu
+ * @author
  * @version 1.00
  * @time  11/12/2018 上午 11:52
  * @email 870439570@qq.com
  */
 @RestController
-@RequestMapping("/actuator/info")
+@RequestMapping("/jvm_agent/info")
 public class CoreController {
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
     @Value("${spring.application.name}")

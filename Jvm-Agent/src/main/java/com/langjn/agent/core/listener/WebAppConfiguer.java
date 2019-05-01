@@ -14,7 +14,7 @@ public class WebAppConfiguer implements   WebMvcConfigurer {
 	private LoginInterceptor  loginInterceptor;
 	@Override
     public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(loginInterceptor).addPathPatterns("/actuator/**");
+		registry.addInterceptor(loginInterceptor).addPathPatterns("/jvm_agent/**");
     }
 
 }

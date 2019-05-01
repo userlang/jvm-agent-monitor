@@ -20,7 +20,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 public class LoginInterceptor implements HandlerInterceptor{
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
-    @Value("${actuator.server.ip}")
+    @Value("${monitor.server.ip}")
     private String ip;
 
 	private   Logger log = LoggerFactory.getLogger(getClass());

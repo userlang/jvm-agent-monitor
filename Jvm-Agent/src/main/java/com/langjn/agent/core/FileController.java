@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/actuator/file")
+@RequestMapping("/jvm_agent/file")
 public class FileController {
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
 

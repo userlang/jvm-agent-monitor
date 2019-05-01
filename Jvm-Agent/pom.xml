@@ -8,9 +8,9 @@
         <version>2.1.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.langjn.jvmagent</groupId>
+    <groupId>com.langjn.agent</groupId>
     <artifactId>Jvm-Agent</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
     <name>Jvm-Agent</name>
     <description>Jvm-Agent</description>
@@ -47,6 +47,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.1.RELEASE</version>
             </plugin>
         </plugins>
     </build>

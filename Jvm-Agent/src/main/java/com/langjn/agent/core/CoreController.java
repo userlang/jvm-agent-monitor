@@ -31,7 +31,7 @@ public class CoreController {
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
     @Value("${spring.application.name}")
     private String name;
-	@Value("${actuator.log.path}")
+	@Value("${monitor.log.path}")
 	private String logUrl;	
 	
 

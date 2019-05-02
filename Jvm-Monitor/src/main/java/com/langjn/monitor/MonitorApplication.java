@@ -20,7 +20,7 @@ public class MonitorApplication {
 
 
     public static void main(String[] args) throws InterruptedException {
-//        IPUtils.getHostIp();
+
         SpringApplication.run(MonitorApplication.class, args);
 
     }

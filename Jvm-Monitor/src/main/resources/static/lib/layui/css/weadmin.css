@@ -196,7 +196,7 @@ body {
   margin-bottom: 10px;
   padding: 5px;
   line-height: 22px;
-  /* border-left: 5px solid #009688; */
+  /* border-left: 5px solid #5cb85c; */
   border-radius: 0 2px 2px 0;
   background-color: #f2f2f2;
 }
@@ -230,11 +230,11 @@ body {
 }
 .page span.current {
   display: inline-block;
-  background: #009688 0 0 no-repeat;
+  background: #5cb85c 0 0 no-repeat;
   color: #fff;
   padding: 10px;
   min-width: 15px;
-  border: 1px solid #009688;
+  border: 1px solid #5cb85c;
 }
 .page .pagination li {
   display: inline-block;
@@ -242,9 +242,9 @@ body {
   text-align: center;
 }
 .page .pagination li.active span {
-  background: #009688 0 0 no-repeat;
+  background: #5cb85c 0 0 no-repeat;
   color: #fff;
-  border: 1px solid #009688;
+  border: 1px solid #5cb85c;
 }
 /*登录样式*/
 /*头部*/

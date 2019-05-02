@@ -11,6 +11,20 @@ jvm探针监控+可视化，用来监控JVM或操作系统，因为是Java开发
 3、注意 数据库的platform表，需要配置你监控的多个Agent地址或一个
 #### 安装使用
 1. 使用maven打包Jvm-Agent项目，然后运行jar或maven集成到其他项目当中
+   <dependency>
+     <groupId>com.langjn.agent</groupId>
+     <artifactId>Jvm-Agent</artifactId>
+     <version>2.0</version>
+   </dependency>
 2. 执行actuator.sql脚本，配置platform表 name字段是Agent所属项目名称
 3. 启动Jvm-Monitor平台 访问 http://127.0.0.1:8080/index
 
+#### 统计图展示如下：
+4. 操作系统内存空间(总/已用/可用）磁盘空间(总/已用/可用）CPU核 负载等信息 
+5. 新生代 eden区空间（总/可用） s0区空间（总/可用） s1区空间（总/可用） 
+6. 老年代空间（总/可用） 
+7. 元空间空间（总/可用） 
+8. 类指针压缩空间（总/可用） 
+9. YGC次数、FGC次数、GC耗时 
+10. 类加载数量（成功/失败） 类加载耗时、类加载大小、类编译数量、类编译耗时、 
+11. 线程状态数量(总数/运行/等待/休眠)

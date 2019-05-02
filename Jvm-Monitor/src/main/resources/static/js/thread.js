@@ -10,7 +10,7 @@ function thread(data) {
             }
         },
         xAxis: {
-            axisLine: { lineStyle: { color: '#8392A5' } },
+            axisLine: { lineStyle: { color: '#fff' } },
             data: data.map(function (item) {
                 return item.date;
             }),
@@ -20,7 +20,7 @@ function thread(data) {
         },
         yAxis: {
             scale: true,
-            axisLine: { lineStyle: { color: '#8392A5' } },
+            axisLine: { lineStyle: { color: '#fff' } },
             splitLine: { show: false }
         },
         tooltip: my_tooltip,
@@ -31,9 +31,32 @@ function thread(data) {
             type: 'inside'
         }],
         visualMap: [{
+            // 针对 EC 系列的 visualMap
+            seriesIndex: 0,
             show: false,
             inRange: {
-                color: white
+                color: colors[0]
+            }
+        },{
+            // 针对 EU 系列的 visualMap
+            seriesIndex: 1,
+            show: false,
+            inRange: {
+                color: colors[1]
+            }
+        },{
+            // 针对 EC 系列的 visualMap
+            seriesIndex: 2,
+            show: false,
+            inRange: {
+                color: colors[2]
+            }
+        },{
+            // 针对 EU 系列的 visualMap
+            seriesIndex: 3,
+            show: false,
+            inRange: {
+                color: colors[3]
             }
         }],
         series: [
@@ -68,7 +91,7 @@ function thread(data) {
                 }
             },
             {
-                name: "Sleeping",//（3）
+                name: "Sleeping",//（4）
                 type: 'line',
                 data: data.map(function (item) {
                     return item.timed_WAITING

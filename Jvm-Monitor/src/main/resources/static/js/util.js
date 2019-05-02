@@ -7,11 +7,15 @@ function GetQueryString(name) {
 }
 
 //折线颜色
-var colors = ['#cc0033', '#ff5722', '#2196f3', '#4caf50'];
+
+
+
+var colors = ['#f73131', '#fadb02', '#2196f3', '#4caf50'];
+//              总           可用
 //点
 var white = null;
 //背景色
-var background_color = '#21202D';
+var background_color = '#393d49';
 
 var my_tooltip = {
         trigger: 'axis',

@@ -9,7 +9,7 @@ function comt(data) {
                 }
             },
             xAxis: {
-                axisLine: { lineStyle: { color: '#8392A5' } },
+                axisLine: { lineStyle: { color: '#fff' } },
                 data: data.map(function (item) {
                     return item.date;
                 }),
@@ -19,7 +19,7 @@ function comt(data) {
             },
             yAxis: {
                 scale: true,
-                axisLine: { lineStyle: { color: '#8392A5' } },
+                axisLine: { lineStyle: { color: '#fff' } },
                 splitLine: { show: false }
             },
             tooltip: my_tooltip,

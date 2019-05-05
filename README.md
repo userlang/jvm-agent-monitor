@@ -18,7 +18,7 @@ jvm探针监控+可视化，用来监控JVM或操作系统，因为是Java开发
       <version>2.0</version>
     </dependency>
 
-2. 执行actuator.sql脚本，配置platform表 name字段是Agent所属项目名称
+2. 执行monitor.sql脚本，配置platform表 name字段是Agent所属项目名称
 3. 启动Jvm-Monitor平台 访问 http://127.0.0.1:8080/index
 
 #### 统计描述：

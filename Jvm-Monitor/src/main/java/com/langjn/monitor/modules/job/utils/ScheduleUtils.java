@@ -9,9 +9,9 @@ import org.quartz.*;
 
 /**
 * @Description:    定时任务工具类
-* @Author:         qinxuewu
+* @author 郎俊楠
 * @CreateDate:     26/11/2018 下午 3:38
-* @Email 870439570@qq.com
+* @Email 1419052183@qq.com
 **/
 public class ScheduleUtils {
     private final static String JOB_NAME = "TASK_";

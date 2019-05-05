@@ -17,7 +17,7 @@ import com.langjn.monitor.modules.job.service.ScheduleJobLogService;
 
 /**
  * 定时任务日志
- * @author qinxeuw
+ * @author 郎俊楠
  *
  */
 @Controller

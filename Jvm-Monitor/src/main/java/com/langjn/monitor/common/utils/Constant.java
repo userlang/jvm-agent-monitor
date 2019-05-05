@@ -3,8 +3,8 @@ package com.langjn.monitor.common.utils;
 
 /**
  * @Description:     常量
- * @Author:         qinxuewu
- * @Email 870439570@qq.com
+ * @author 郎俊楠
+ * @Email 1419052183@qq.com
  */
 public class Constant {
     /**

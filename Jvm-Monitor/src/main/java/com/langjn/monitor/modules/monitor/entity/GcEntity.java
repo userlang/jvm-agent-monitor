@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  *  堆内存信息 GC信息
- * @author admin
+ * @author 郎俊楠
  */
 
 @TableName("gc_table")

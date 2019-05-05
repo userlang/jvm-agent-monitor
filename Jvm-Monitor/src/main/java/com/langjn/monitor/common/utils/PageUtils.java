@@ -5,8 +5,8 @@ import java.util.List;
 
 /**
  * @Description:     分页工具类
- * @Author:         qinxuewu
- * @Email 870439570@qq.com
+ * @author 郎俊楠
+ * @Email 1419052183@qq.com
  */
 public class PageUtils implements Serializable {
     private static final long serialVersionUID = 1L;

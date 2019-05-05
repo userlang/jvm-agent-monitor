@@ -5,7 +5,7 @@ package com.langjn.monitor.common.exception;
  *  
  * @version 1.00
  * @time  26/11/2018 下午 6:26
- * @email 870439570@qq.com
+ * @email 1419052183@qq.com
  */
 public class MyException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

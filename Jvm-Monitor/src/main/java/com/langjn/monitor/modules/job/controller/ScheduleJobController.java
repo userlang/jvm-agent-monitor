@@ -21,9 +21,9 @@ import com.langjn.monitor.modules.job.service.ScheduleJobService;
 
 /**
  * @Description: 定时任务
- * @Author: qinxuewu
+ * @author 郎俊楠
  * @CreateDate: 26/11/2018 下午 3:35
- * @Email 870439570@qq.com
+ * @Email 1419052183@qq.com
  **/
 @Controller
 @RequestMapping("/schedule")

@@ -10,9 +10,9 @@ import java.lang.reflect.Method;
 
 /**
 * @Description:    执行定时任
-* @Author:         qinxuewu
+* @author 郎俊楠
 * @CreateDate:     26/11/2018 下午 3:38
-* @Email 870439570@qq.com
+* @Email 1419052183@qq.com
 **/
 public class ScheduleRunnable implements Runnable {
     private Object target;

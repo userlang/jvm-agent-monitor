@@ -19,9 +19,9 @@ import java.util.concurrent.Future;
 
 /**
 * @Description:    定时任务
-* @Author:         qinxuewu
+* @author 郎俊楠
 * @CreateDate:     26/11/2018 下午 3:37
-* @Email 870439570@qq.com
+* @Email 1419052183@qq.com
 **/
 public class ScheduleJob extends QuartzJobBean {
     private Logger logger = LoggerFactory.getLogger(getClass());

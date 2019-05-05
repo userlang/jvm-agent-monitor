@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * linux  jvm操作
- * @author admin
+ * @author 郎俊楠
  *
  */
 public class JvmUtils {

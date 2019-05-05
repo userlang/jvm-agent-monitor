@@ -5,7 +5,7 @@ import com.langjn.agent.utils.Arith;
 /**
  * CPU相关信息
  * 
- * @author ruoyi
+ * @author 郎俊楠
  */
 public class Cpu {
 	/**

@@ -21,7 +21,7 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * jvm数据收集定时任务
  * 
- * @author qxw
+ * @author 郎俊楠
  *
  */
 @Component("monitiorTask")

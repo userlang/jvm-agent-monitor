@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * @Description:    异常处理器
- * @Author:         qinxuewu
- * @Email 870439570@qq.com
+ * @author 郎俊楠
+ * @Email 1419052183@qq.com
  */
 @RestControllerAdvice
 public class MyExceptionHandler {

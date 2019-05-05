@@ -6,9 +6,9 @@ import com.langjn.monitor.common.exception.MyException;
 
 /**
 * @Description:   数据校验
-* @Author:         qinxuewu
+* @author 郎俊楠
 * @CreateDate:     26/11/2018 下午 3:31
-* @Email 870439570@qq.com
+* @Email 1419052183@qq.com
 **/
 public abstract class Assert {
 

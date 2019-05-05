@@ -9,7 +9,7 @@ import com.langjn.agent.utils.Arith;
 /**
  * JVM相关信息
  * 
- * @author ruoyi
+ * @author 郎俊楠
  */
 public class Jvm {
 	/**

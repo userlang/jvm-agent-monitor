@@ -8,9 +8,9 @@ import com.langjn.monitor.modules.job.entity.ScheduleJobEntity;
 
 /**
 * @Description:    定时任务
-* @Author:         qinxuewu
+* @author 郎俊楠
 * @CreateDate:     26/11/2018 下午 3:36
-* @Email 870439570@qq.com
+* @Email 1419052183@qq.com
 **/
 public interface ScheduleJobService extends IService<ScheduleJobEntity> {
 

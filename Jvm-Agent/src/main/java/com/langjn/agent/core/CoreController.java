@@ -4,6 +4,7 @@ import com.langjn.agent.jvm.Jstack;
 import com.langjn.agent.jvm.Jstat;
 import com.langjn.agent.jvm.Server;
 import com.langjn.agent.utils.ExecuteCmd;
+import com.langjn.agent.utils.HardwareAbstractionLayerUtil;
 import com.langjn.agent.utils.LogReaderUtils;
 import com.langjn.agent.utils.Res;
 
@@ -13,6 +14,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import oshi.hardware.HardwareAbstractionLayer;
+import oshi.hardware.Sensors;
 
 import java.lang.management.ManagementFactory;
 import java.util.*;
@@ -201,5 +204,18 @@ public class CoreController {
         return  pid;
     }
 
+    /**
+     * 传感器
+     * @return
+     */
+    @RequestMapping("sensors")
+    public Res sensors(){
+
+         HardwareAbstractionLayer install = HardwareAbstractionLayerUtil.getInstall();
+         Sensors sensors = install.getSensors();
+         SensorsEntity sensorsEntity=new SensorsEntity(sensors);
+         sensorsEntity.setDate(time());
+        return Res.ok().put("sensors", sensorsEntity);
+    }
 
 }

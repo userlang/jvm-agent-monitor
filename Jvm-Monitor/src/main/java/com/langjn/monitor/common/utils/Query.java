@@ -11,7 +11,6 @@ import java.util.Map;
 * @CreateDate:     26/11/2018 下午 3:29
 * @Email 1419052183@qq.com
 **/
-@Deprecated
 
 public class Query extends LinkedHashMap<String, Object> {
     private static final long serialVersionUID = 1L;

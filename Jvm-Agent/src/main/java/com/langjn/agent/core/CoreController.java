@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.hardware.Sensors;
 
@@ -216,6 +217,19 @@ public class CoreController {
          SensorsEntity sensorsEntity=new SensorsEntity(sensors);
          sensorsEntity.setDate(time());
         return Res.ok().put("sensors", sensorsEntity);
+    }
+
+    /**
+     * 获取内存信息
+     */
+    @RequestMapping("memory")
+    public Res memory(){
+
+        HardwareAbstractionLayer install = HardwareAbstractionLayerUtil.getInstall();
+        GlobalMemory memory = install.getMemory();
+        MemoryEntity entity=new MemoryEntity(memory);
+        entity.setDate(time());
+        return Res.ok().put("memory",entity);
     }
 
 }

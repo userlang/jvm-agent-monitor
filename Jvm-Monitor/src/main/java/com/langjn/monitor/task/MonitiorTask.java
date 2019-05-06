@@ -1,11 +1,11 @@
 package com.langjn.monitor.task;
 import java.util.List;
 
+import com.langjn.monitor.api.monitor.dao.MemoryTableMapper;
+import com.langjn.monitor.api.monitor.dao.SensorsTableMapper;
+import com.langjn.monitor.api.monitor.entity.*;
 import com.langjn.monitor.common.utils.ByteConvKbUtils;
 import com.langjn.monitor.common.utils.HttpUtil;
-import com.langjn.monitor.api.monitor.entity.ClassLoadEntity;
-import com.langjn.monitor.api.monitor.entity.GcEntity;
-import com.langjn.monitor.api.monitor.entity.ThreadEntity;
 import com.langjn.monitor.api.monitor.service.ClassService;
 import com.langjn.monitor.api.monitor.service.GcService;
 import com.langjn.monitor.api.monitor.service.ThreadService;
@@ -17,6 +17,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * jvm数据收集定时任务
@@ -34,6 +37,12 @@ public class MonitiorTask {
 	private ThreadService threadService;
 	@Autowired
 	private PlatformMapper platformMapper;
+
+
+	@Resource
+	private  SensorsTableMapper sensorsTableMapper;
+	@Resource
+	private MemoryTableMapper memoryTableMapper;
 
 	/**
 	 * jvm gc和内存收信息收集
@@ -100,7 +109,38 @@ public class MonitiorTask {
              }
     	});
     }
-    
-    
 
+
+	/**
+	 * 拉取内存信息收集
+	 */
+	@Scheduled(cron="0 * * * * ?")
+	public void pullMemory(){
+		List<PlatformEntity> list=platformMapper.selectList(null);
+		list.forEach(i->{
+			String url=i.getUrl();
+			JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/memory"));
+			if(info.getIntValue("code")==0){
+				MemoryEntity entity = info.getObject("memory", MemoryEntity.class);
+				memoryTableMapper.insert(entity);
+			}
+		});
+	}
+
+
+	/**
+	 * 拉取传感器信息收集
+	 */
+	@Scheduled(cron="0 * * * * ?")
+	public void pullSensors(){
+		List<PlatformEntity> list=platformMapper.selectList(null);
+		list.forEach(i->{
+			String url=i.getUrl();
+			JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/sensors"));
+			if(info.getIntValue("code")==0){
+				SensorsEntity entity = info.getObject("sensors", SensorsEntity.class);
+				sensorsTableMapper.insert(entity);
+			}
+		});
+	}
 }

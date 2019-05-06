@@ -205,7 +205,7 @@ public class CoreController {
     }
 
     /**
-     * 传感器
+     * 获取传感器信息
      * @return
      */
     @RequestMapping("sensors")

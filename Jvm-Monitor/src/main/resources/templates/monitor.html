@@ -151,35 +151,37 @@
         </div>
     </div>
 
-    <div class="layui-col-md6">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <span class="layui-badge layui-bg-cyan">类加载数量</span>
-            </div>
-            <div class="layui-card-body" id="classn" style="height: 330px">
-            </div>
-        </div>
-    </div>
-
-    <div class="layui-col-md6">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <span class="layui-badge layui-bg-cyan">类加载耗时</span>
-            </div>
-            <div class="layui-card-body" id="classt" style="height: 330px">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <span class="layui-badge layui-bg-cyan">类加载数量</span>
+                </div>
+                <div class="layui-card-body" id="classn" style="height: 330px">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="layui-col-md6" style="margin: 10px 0 10px 0">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <!--<span class="layui-badge layui-bg-green title">类加载监控</span>-->
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <span class="layui-badge layui-bg-cyan">类加载耗时</span>
+                </div>
+                <div class="layui-card-body" id="classt" style="height: 330px">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="layui-col-md6" style="margin: 10px 0 10px 0">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <span class="layui-badge layui-bg-cyan">类加载大小</span>
+                </div>
+                <div class="layui-card-body" id="combyte" style="height: 330px">
+                </div>
+            </div>
+        </div>
+
+    <div class="layui-col-md12" style="margin: 10px 0 10px 0">
         <div class="layui-card">
             <div class="layui-card-header">
                 <span class="layui-badge layui-bg-green title">类编译监控</span>
@@ -187,15 +189,7 @@
         </div>
     </div>
 
-    <div class="layui-col-md6">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <span class="layui-badge layui-bg-cyan">类加载大小</span>
-            </div>
-            <div class="layui-card-body" id="combyte" style="height: 330px">
-            </div>
-        </div>
-    </div>
+
 
     <div class="layui-col-md6">
         <div class="layui-card">
@@ -203,22 +197,6 @@
                 <span class="layui-badge layui-bg-cyan">类编译数量</span>
             </div>
             <div class="layui-card-body" id="comn" style="height: 330px">
-            </div>
-        </div>
-    </div>
-
-    <div class="layui-col-md6" style="margin: 10px 0 10px 0">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <!--<span class="layui-badge layui-bg-green title">类编译监控</span>-->
-            </div>
-        </div>
-    </div>
-
-    <div class="layui-col-md6" style="margin: 10px 0 10px 0">
-        <div class="layui-card">
-            <div class="layui-card-header">
-                <span class="layui-badge layui-bg-green title">线程监控</span>
             </div>
         </div>
     </div>
@@ -233,12 +211,40 @@
         </div>
     </div>
 
-    <div class="layui-col-md6">
+    <div class="layui-col-md12" style="margin: 10px 0 10px 0">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <span class="layui-badge layui-bg-green title">jvm线程监控</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="layui-col-md12">
         <div class="layui-card">
             <div class="layui-card-header">
                 <span class="layui-badge layui-bg-cyan">总数/运行/等待/休眠</span>
             </div>
             <div class="layui-card-body" id="thread" style="height: 330px">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-col-md12" style="margin: 10px 0 10px 0">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <span class="layui-badge layui-bg-green title">操作系统内存监控</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md12">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <span class="layui-badge layui-bg-cyan">总数/已用/剩余</span>
+            </div>
+            <div class="layui-card-body" id="sys_memory" style="height: 330px">
             </div>
         </div>
     </div>
@@ -267,5 +273,6 @@
 <script src="/js/comt.js"></script>
 <script src="/js/combyte.js"></script>
 <script src="/js/thread.js"></script>
+<script src="/js/memory.js"></script>
 </body>
 </html>

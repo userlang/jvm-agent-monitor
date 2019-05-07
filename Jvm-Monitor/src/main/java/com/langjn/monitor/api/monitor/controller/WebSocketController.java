@@ -1,4 +1,8 @@
 package com.langjn.monitor.api.monitor.controller;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.langjn.monitor.api.monitor.dao.MemoryTableMapper;
+import com.langjn.monitor.api.monitor.entity.MemoryEntity;
+import com.langjn.monitor.api.monitor.service.MemoryTableService;
 import com.langjn.monitor.common.utils.HttpUtil;
 import com.langjn.monitor.api.platform.dao.PlatformMapper;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +17,11 @@ import com.langjn.monitor.api.monitor.entity.ThreadEntity;
 import com.langjn.monitor.api.monitor.service.ClassService;
 import com.langjn.monitor.api.monitor.service.GcService;
 import com.langjn.monitor.api.monitor.service.ThreadService;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -29,7 +36,9 @@ public class WebSocketController {
     private ThreadService threadService;
 	@Autowired
 	private PlatformMapper platformMapper;
-	
+
+    @Autowired
+    private MemoryTableService memoryTableService;
     /**
      * gc 内存信息
      * MessageMapping注解和我们之前使用的@RequestMapping类似  前端主动发送消息到后台时的地址
@@ -81,5 +90,19 @@ public class WebSocketController {
     		 return "没有最新日志.......................";
     	 }
        
+    }
+
+    /**
+     * 操作系统内存信息
+     * @param name
+     * @return
+     */
+    @MessageMapping("/memory")
+    @SendTo("/topic/memory")
+    public List<MemoryEntity> socketMemory(String name){
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("name",name);
+        return memoryTableService.list(queryWrapper);
     }
 }

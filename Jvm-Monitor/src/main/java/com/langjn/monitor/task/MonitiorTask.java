@@ -122,6 +122,7 @@ public class MonitiorTask {
 			JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/memory"));
 			if(info.getIntValue("code")==0){
 				MemoryEntity entity = info.getObject("memory", MemoryEntity.class);
+				entity.setName(i.getName());
 				memoryTableMapper.insert(entity);
 			}
 		});
@@ -139,6 +140,7 @@ public class MonitiorTask {
 			JSONObject info=JSONObject.parseObject(HttpUtil.URLGet(url+"/jvm_agent/info/sensors"));
 			if(info.getIntValue("code")==0){
 				SensorsEntity entity = info.getObject("sensors", SensorsEntity.class);
+				entity.setName(i.getName());
 				sensorsTableMapper.insert(entity);
 			}
 		});

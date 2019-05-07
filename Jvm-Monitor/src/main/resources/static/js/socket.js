@@ -57,6 +57,22 @@ function thread() {
     });
 }
 
+
+function memory() {
+    var socket = new SockJS('/websocket');
+    var stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        stompClient.subscribe('/topic/memory', function (d) {
+            var data = JSON.parse(d.body)
+            memory(data);
+            setTimeout(function () {
+                stompClient.send("/app/memory", {}, GetQueryString("pid"));
+            }, interval_time);
+        });
+        stompClient.send("/app/memory", {}, GetQueryString("pid"));
+    });
+}
+
 //加载层-默认风格
 layer.load();
 
@@ -64,6 +80,7 @@ layer.load();
 gc()
 cl()
 thread()
+memory()
 
 //此处演示关闭
 setTimeout(function () {

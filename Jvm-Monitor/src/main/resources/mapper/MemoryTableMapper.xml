@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.langjn.monitor.api.monitor.dao.MemoryTableMapper">
+
+    <resultMap id="BaseResultMap" type="com.langjn.monitor.api.monitor.entity.MemoryEntity">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="total" column="total" jdbcType="DOUBLE"/>
+            <result property="free" column="free" jdbcType="DOUBLE"/>
+            <result property="used" column="used" jdbcType="DOUBLE"/>
+            <result property="swaptotal" column="swapTotal" jdbcType="DOUBLE"/>
+            <result property="swapused" column="swapUsed" jdbcType="DOUBLE"/>
+            <result property="swappagesin" column="swapPagesIn" jdbcType="DOUBLE"/>
+            <result property="swappagesout" column="swapPagesOut" jdbcType="DOUBLE"/>
+            <result property="pagesize" column="pageSize" jdbcType="DOUBLE"/>
+            <result property="date" column="date" jdbcType="TIMESTAMP"/>
+            <result property="platformId" column="platform_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,total,free,
+        used,swapTotal,swapUsed,
+        swapPagesIn,swapPagesOut,pageSize,
+        date,platform_id
+    </sql>
+</mapper>

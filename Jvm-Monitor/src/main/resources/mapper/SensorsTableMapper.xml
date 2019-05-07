@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.langjn.monitor.api.monitor.dao.SensorsTableMapper">
+
+    <resultMap id="BaseResultMap" type="com.langjn.monitor.api.monitor.entity.SensorsEntity">
+            <result property="cpuTemperature" column="cpu_temperature" jdbcType="DOUBLE"/>
+            <result property="cpuVoltage" column="cpu_voltage" jdbcType="DOUBLE"/>
+            <result property="fanSpeeds" column="fan_speeds" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="platformId" column="platform_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        cpu_temperature,cpu_voltage,fan_speeds,
+        name,platform_id
+    </sql>
+</mapper>

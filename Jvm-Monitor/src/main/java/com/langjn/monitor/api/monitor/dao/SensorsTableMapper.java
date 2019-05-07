@@ -3,6 +3,7 @@ package com.langjn.monitor.api.monitor.dao;
 import com.langjn.monitor.api.monitor.entity.SensorsEntity;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author langjunnan
@@ -10,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2024-05-06 22:34:11
 * @Entity com.langjn.monitor.api.monitor.entity.SensorsTable
 */
+@Mapper
 public interface SensorsTableMapper extends BaseMapper<SensorsEntity> {
 
 }

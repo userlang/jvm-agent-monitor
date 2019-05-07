@@ -1,11 +1,14 @@
 package com.langjn.monitor.api.monitor.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
  * 传感器
  * @TableName sensors_table
  */
+@TableName("sensors_table")
 public class SensorsEntity implements Serializable {
     /**
      * cpu温度
@@ -31,6 +34,8 @@ public class SensorsEntity implements Serializable {
      * 
      */
     private Integer platformId;
+
+    private String date;
 
     private static final long serialVersionUID = 1L;
 
@@ -149,5 +154,13 @@ public class SensorsEntity implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

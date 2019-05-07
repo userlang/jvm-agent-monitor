@@ -1,5 +1,9 @@
 package com.langjn.monitor.api.monitor.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,10 +12,12 @@ import java.util.Date;
 
  * @TableName memory_table
  */
+@TableName("memory_table")
 public class MemoryEntity implements Serializable {
     /**
      * 
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -57,7 +63,7 @@ public class MemoryEntity implements Serializable {
     /**
      * 
      */
-    private Date date;
+    private String date;
 
     /**
      * 
@@ -195,14 +201,14 @@ public class MemoryEntity implements Serializable {
     /**
      * 
      */
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
     /**
      * 
      */
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

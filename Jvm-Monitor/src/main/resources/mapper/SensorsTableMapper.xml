@@ -10,10 +10,11 @@
             <result property="fanSpeeds" column="fan_speeds" jdbcType="VARCHAR"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="platformId" column="platform_id" jdbcType="INTEGER"/>
+            <result property="date" column="date" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        cpu_temperature,cpu_voltage,fan_speeds,
+        cpu_temperature,cpu_voltage,fan_speeds,date,
         name,platform_id
     </sql>
 </mapper>

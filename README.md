@@ -38,3 +38,5 @@ jvm探针监控+可视化，用来监控JVM或操作系统，因为是Java开发
 ![图片](image/img_3.png)
 ![图片](image/img_4.png)
 ![图片](image/img_5.png)
+![图片](image/img_6.png)
+![图片](image/img_7.png)

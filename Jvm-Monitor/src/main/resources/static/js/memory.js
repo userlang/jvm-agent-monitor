@@ -57,7 +57,7 @@ function memory(data) {
                 name: "Total",//（2）
                 type: 'line',
                 data: data.map(function (item) {
-                    return item.total;
+                    return item.total/1024;
                 }),
                 lineStyle: {
                     color: colors[0]
@@ -67,7 +67,7 @@ function memory(data) {
                 name: "free",//（3）
                 type: 'line',
                 data: data.map(function (item) {
-                    return item.free
+                    return item.free/1024;
                 }),
                 lineStyle: {
                     color: colors[1]
@@ -77,7 +77,7 @@ function memory(data) {
                 name: "used",//（3）
                 type: 'line',
                 data: data.map(function (item) {
-                    return item.used
+                    return item.used/1024;
                 }),
                 lineStyle: {
                     color: colors[2]

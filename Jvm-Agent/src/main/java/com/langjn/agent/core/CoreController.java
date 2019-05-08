@@ -35,8 +35,7 @@ public class CoreController {
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
     @Value("${spring.application.name}")
     private String name;
-	@Value("${monitor.log.path}")
-	private String logUrl;	
+
 	
 
 
@@ -155,18 +154,7 @@ public class CoreController {
         }
     }
     
-    @RequestMapping("/logReader")
-    public  Res logred(String url){
-        try{
 
-        	String msg= LogReaderUtils.poll(logUrl);
-
-            return Res.ok().put("result",msg);
-        }catch (Exception e){
-            logger.debug("RuntimeExec异常：{}",e);
-            return  Res.error("RuntimeExec异常");
-        }
-    }
 
     /**
      * 系统物理内存 

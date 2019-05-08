@@ -17,9 +17,9 @@ jvm探针监控+可视化，用来监控JVM或操作系统，因为是Java开发
       <artifactId>Jvm-Agent</artifactId>
       <version>2.0</version>
     </dependency>
-
-2. 执行monitor.sql脚本，配置platform表 name字段是Agent所属项目名称
-3. 启动Jvm-Monitor平台 访问 http://127.0.0.1:8080/index
+2. 集成到maven中的时候需要设置白名单 monitor.server.ip= 
+3. 执行monitor.sql脚本，配置platform表 name字段是Agent所属项目名称
+4. 启动Jvm-Monitor平台 访问 http://127.0.0.1:8080/index
 
 #### 统计描述：
 4. 操作系统整体负载情况

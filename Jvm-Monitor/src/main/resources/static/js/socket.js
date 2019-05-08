@@ -2,7 +2,7 @@ var interval_time = 60000;
 
 // Socket
 function gc() {
-    var socket = new SockJS('/websocket');
+    var socket = new SockJS('http://127.0.0.1:8080/websocket');
     var stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/gc', function (d) {
@@ -24,7 +24,7 @@ function gc() {
 }
 
 function cl() {
-    var socket = new SockJS('/websocket');
+    var socket = new SockJS('http://127.0.0.1:8080/websocket');
     var stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/cl', function (d) {
@@ -43,7 +43,7 @@ function cl() {
 }
 
 function thread() {
-    var socket = new SockJS('/websocket');
+    var socket = new SockJS('http://127.0.0.1:8080/websocket');
     var stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/thread', function (d) {
@@ -59,7 +59,7 @@ function thread() {
 
 
 function memory() {
-    var socket = new SockJS('/websocket');
+    var socket = new SockJS('http://127.0.0.1:8080/websocket');
     var stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/memory', function (d) {

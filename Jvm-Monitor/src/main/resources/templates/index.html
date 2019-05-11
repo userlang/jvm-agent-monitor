@@ -10,6 +10,11 @@
     <title>jvm-monitor  JVM远程应用监控工具index</title>
     <link rel="stylesheet" href="/lib/layui/css/layui.css"/>
     <link rel="icon" type="image/x-icon" href="https://langjn.com:666/public/tomcatlogo.png" />
+    <link rel="stylesheet" href="/public/C/public.css">
+    <link rel="stylesheet" href="/public/C/header.css">
+    <link rel="stylesheet" href="/public/C/login.css">
+    <link rel="stylesheet" href="/public/C/register.css">
+    <script type="text/javascript" src="/public/J/jquery-1.8.0.js"></script>
 </head>
 <style>
     .layui-layout-admin .layui-body {
@@ -18,22 +23,32 @@
 </style>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo">Monitor监控</div>
-         <!-- 头部区域（可配合layui已有的水平导航） -->
-	    <ul class="layui-nav layui-layout-left">
-	      <li class="layui-nav-item"><a href="/index">控制台</a></li>
+<!--    <div class="layui-header">-->
+<!--        <div class="layui-logo">Monitor监控</div>-->
+<!--         &lt;!&ndash; 头部区域（可配合layui已有的水平导航） &ndash;&gt;-->
+<!--	    <ul class="layui-nav layui-layout-left">-->
+<!--	      <li class="layui-nav-item"><a href="/index">控制台</a></li>-->
 
-	    </ul>
+<!--	    </ul>-->
 
-    </div>
+<!--    </div>-->
+    <!-- 头部开始-->
+    <div id="header" ></div>
+    <script type="text/javascript">
+        $(function(){
+            $("#header").load('/public/header.html');
+        });
+    </script>
 
-    <div class="layui-side layui-bg-black">
-        <div class="layui-side-scroll">
+    <!-- 头部结束-->
+
+
+    <div class="layui-side " >
+        <div class="layui-side-scroll" style="background-color: #7d9f7c;color: #ababab">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul style="background-color: #b3e4b2" class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:void(0)"><i class="layui-icon" style="font-size: 20px;">&#xe614;</i>&nbsp;应用列表</a>
+                    <a class="" id="base-menu" href="javascript:void(0)"><i class="layui-icon" style="font-size: 20px;">&#xe614;</i>&nbsp;应用列表</a>
                     <dl class="layui-nav-child" th:each="list:${list}">
                         <dd>
                             <a  class="monitor" href="javascript:void(0)">
@@ -69,7 +84,11 @@
     })
 
 </script>
-
+<style type="text/css">
+    #base-menu:hover{
+        background-color: #67b168;
+    }
+</style>
 
 </body>
 </html>

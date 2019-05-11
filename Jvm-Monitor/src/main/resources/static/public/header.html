@@ -1,0 +1,61 @@
+﻿
+
+<div class="header">
+    <header>
+        <script type="text/javascript" src="js"></script>
+        <div class="home-logo float-left">
+
+         <a style="color: #67b168" href="/index">J V M 监 控</a>
+
+        </div>
+
+
+        <div class="float-right home-login">
+            <a  href="/index" id="tologin"  type="button" style="height: 34px;line-height: 34px;background-color: white;color: #2CC779 " class="login btn btn-success">应用列表</a>
+
+        </div>
+        <style type="text/css">
+            .userinfo{
+                margin-top: 10px;
+            }
+            .userinfo:hover{
+                cursor: pointer;
+            }
+        </style>
+        <div class="float-right userinfo " style="display: none;width: 130px;height: 50px">
+
+            <span style="height: 50px;overflow: hidden;width:130px;display:block;line-height: 45px;font-size: 15px;color: #2CC779 " >
+                  <img height="20px" src="https://langjn.com:666//publc/alert.png">
+           </span>
+            <ul id="userinfo_list" style="display: none;list-style: none;;color:#6ce26c;padding: 0px;margin: 10px 0px 0px 0px;text-align: center;width: 100px">
+                <li class="toUserinfo" style="height: 30px;line-height: 30px;font-size: 13px;padding: 0px;margin: 0px;">个人中心</li>
+                <li class="loginOut" style="height: 30px;line-height: 30px;font-size: 13px;padding: 0px;margin: 0px;">退出</li>
+            </ul>
+        </div>
+
+<!--        <div class="float-right home-search" >-->
+<!--            <input id="search" type="search" style="border: 1px solid #C7CBDC;height: 35px;border-radius: 15px;padding-left: 10px;font-size: 15px;width: 240px"  placeholder="  搜 索 本 站 内 容">-->
+<!--            <span class="iconfont icon-sousuo1" onclick="search(this)"></span>-->
+<!--        </div>-->
+    </header>
+    <span class="header_hi">
+
+    <div id="jiqiren" class="robotHover">
+        <span> </span>
+        <div id="news">未读</br>消息</div>
+        <div id="siteNotice">呼叫</br>中心</div>
+        <div id="taskNotice">开</div>
+        <div id="a11">发</div>
+        <div id="a22">中</div>
+    </div>
+    </span>
+    <script>
+        let robot = document.getElementById('jiqiren');
+        robot.onmouseover=() => {
+            robot.classList.remove("robotHover")
+        };
+        robot.onmouseout = function () {
+            robot.classList.add("robotHover")
+        }
+    </script>
+</div>

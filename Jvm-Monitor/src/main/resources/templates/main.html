@@ -9,7 +9,8 @@
     <meta http-Equiv="Expires" Content="0" />
     <title>监控列表-main.html</title>
     <link rel="stylesheet" href="/lib/layui/css/layui.css"/>
-	<link rel="icon" type="image/x-icon" href="https://langjn.com:666/public/tomcatlogo.png" />
+
+
 </head>
 <style>
     body {
@@ -24,7 +25,7 @@
 	}  
 </style>
 <body>
-<div style="padding: 20px; background-color: #F2F2F2;margin-top: 50px;">
+<div style="padding: 20px; background-color: #F2F2F2;margin-top: 70px;">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <div class="layui-card">
@@ -32,31 +33,27 @@
                     <i class="layui-icon">&#xe68e;</i>
                     <span>首页 / 应用列表</span>
                 </div>
-                <div class="layui-card-body">               
+                <div class="layui-card-body">
 						  <button class="layui-btn layui-btn-sm" id="add"><i class="layui-icon">&#xe654;</i>添加应用 </button>
                 </div>
             </div>
         </div>
     </div>
 
- 
+
 
    <!-- 栅格 -->
    <div class="layui-row layui-col-space5">
 	    <div class="layui-col-md4" th:each="list:${list}">
 	      <div class="grid-demo">
 	        	<div class="layui-card-header">
-	        	<i class="layui-icon layui-icon-website" style="font-size: 26px;color: #1e9fff;margin-right: 20px;"></i>应用名称：<span th:text="${list.name}">>web1</span>
+	        	<i class="layui-icon layui-icon-website" style="font-size: 26px;color:#2CC779 ;margin-right: 20px;"></i>应用名称：<span th:text="${list.name}">>ok1</span>
 		        	<div class="layui-btn-group" style="float: right;">
-		        	 		<button class="layui-btn layui-btn-sm weblog"   title="应用日志" th:attr="data-url=${list.url}">
-    							<i class="layui-icon">&#xe652;</i>
- 							  </button>		
+
 							  <button class="layui-btn layui-btn-sm monitor"   title="详情" th:attr="data-name=${list.name}">
     							<i class="layui-icon">&#xe857;</i>
  							  </button>		
- 							  <button class="layui-btn layui-btn-danger layui-btn-sm del" title="删除"   th:attr="data-name=${list.name}">
-							    <i class="layui-icon">&#xe640;</i>
-							  </button>		
+
 						</div>
 		        	</div>
 		        	
@@ -105,37 +102,56 @@
 			       		 <div class="layui-progress-bar" lay-percent="100%"></div>
 			        </div>      
 			        <p>磁盘状态</p>
-			         			      
-						<table class="layui-table" lay-size="sm" lay-skin="nob">
-                                        <thead>
-                                            <tr>
-                                                <th>盘符路径</th>
-                                                <th>文件系统</th>
-                                                <th>盘符类型</th>
-                                                <th>总大小</th>
-                                                <th>可用大小</th>
-                                                <th>已用大小</th>
-                                                <th>已用百分比</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr th:each="sysFile : ${list.server.sysFiles}">
-                                                <td th:text="${sysFile.dirName}">C:\</td>
-                                                <td th:text="${sysFile.sysTypeName}">NTFS</td>
-                                                <td th:text="${sysFile.typeName}">local</td>
-                                                <td th:text="${sysFile.total}">0GB</td>
-                                                <td th:text="${sysFile.free}">0GB</td>
-                                                <td th:text="${sysFile.used}">0GB</td>
-                                                <td >[[${sysFile.usage}]]%</td>
-                                            </tr>
-                                        </tbody>
+
+					<table style="display:block;width: 370px;" class="layui-table" >
+								<thead style="display:block;width: 370px;" >
+									<tr style="display:block;width: 370px;" >
+										<th  style="display:inline-block;width: 70px">描述</th>
+										<th  style="display:inline-block;;width: 232px">值</th>
+									</tr>
+								</thead>
+                               <tbody style="display:block;width: 370px;"  th:each="sysFile : ${list.server.sysFiles}">
+
+									<tr style="display:block;width: 370px;" >
+										<td  style="display:inline-block;width: 70px">盘符路径</td>
+										<td style="display:inline-block;;width: 232px;word-wrap: break-word;" th:text="${sysFile.dirName}">C:\</td>
+									</tr>
+									<tr style="display:block;width: 370px;" >
+										<td style="display:inline-block;width: 70px" >文件系统</td>
+										<td style="display:inline-block;;width: 232px;word-wrap: break-word;" th:text="${sysFile.sysTypeName}">NTFS</td>
+									</tr>
+									<tr style="display:block;width: 370px;" >
+										<td style="display:inline-block;width: 70px">盘符类型</td>
+										<td style="display:inline-block;;width: 232px;word-wrap: break-word;"  th:text="${sysFile.typeName}">local</td>
+									</tr>
+									<tr style="display:block;width: 370px;" >
+										<td style="display:inline-block;width: 70px">总大小</td>
+										<td style="display:inline-block;;width: 232px;word-wrap: break-word;" th:text="${sysFile.total}">0GB</td>
+									</tr>
+									<tr style="display:block;width: 370px;" >
+										<td style="display:inline-block;width: 70px">可用大小</td>
+										<td style="display:inline-block;;width: 232px;word-wrap: break-word;" th:text="${sysFile.free}">0GB</td>
+									</tr>
+										<tr style="display:block;width: 370px;" >
+											<td style="display:inline-block;width: 70px">已用大小</td>
+											<td style="display:inline-block;;width: 232px;word-wrap: break-word;" th:text="${sysFile.used}">0GB</td>
+										</tr>
+										<tr style="display:block;width: 370px;;border-bottom: #67b168 solid 1px">
+											<td style="display:inline-block;width: 70px">已用百分比</td>
+											<td style="display:inline-block;;width: 232px;word-wrap: break-word;" >[[${sysFile.usage}]]%</td>
+										</tr>
+
+                                </tbody>
                                     </table>   
-		      		  </div>
+
+
+
+					</div>
 		        </div>
 	      </div>
 	    </div>	  
   </div>
- 
+
  <!-- 弹出层 --> 
   <div class="layelAdd" style="display: none;">
 	  	<form class="layui-form" action="" style="margin-top: 20px;">
@@ -161,6 +177,7 @@
  </div>
 
 </div>
+
 <script src="/lib/layui/layui.all.js"></script>
 <script src="/lib/jquery.min.js"></script>
 <script type="text/javascript">
@@ -238,4 +255,9 @@
 
 </script>
 </body>
+<style type="text/css">
+	element.style{
+
+	}
+</style>
 </html>

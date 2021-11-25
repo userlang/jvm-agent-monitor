@@ -32,6 +32,29 @@
 
 ---
 
+## 🌟 项目简介
+
+🚩🎌🏴 **快速认识 Jvm-Agent-Monitor** 🏴🎌🚩
+
+> 🎯 **一句话定位**：一针探针 💉，洞察虚拟机每一次呼吸；一方大屏 🖥️，掌控集群每一寸资源。
+
+⚡ **为什么选择我们？**
+
+| 🏅 | 🔥 核心能力 | 💡 你得到的价值 |
+|:---:|:---|:---|
+| 🚀 | **零侵入接入** | 一行 Maven 依赖或一个 jar 包，即刻上线 |
+| 🔍 | **全链路采集** | 从 CPU 温度到 GC 停顿，指标一网打尽 |
+| 📡 | **毫秒级推送** | WebSocket 实时刷新，数据永不撒谎 |
+| 🛡️ | **安全白名单** | IP 白名单管控，上报通道固若金汤 |
+| 📊 | **可视化大屏** | ECharts 动态图表，态势一屏尽览 |
+| ⏱️ | **智能调度** | Quartz 定时巡检，异常无处遁形 |
+
+🚩 **监控版图全景**
+
+- 🖥️ **操作系统** —— 🚩 系统负载｜💽 内存版图｜🗄️ 磁盘空间｜🔥 CPU 温度·电压·风扇
+- ☕ **JVM 运行时** —— 🚩 新生代 Eden/S0/S1｜🚩 老年代｜🚩 元空间｜🚩 GC 脉搏（YGC/FGC/耗时）
+- 🧬 **深度洞察** —— 🏴 类加载数量与耗时｜🏴 线程状态四象限｜🏴 压缩类指针空间
+
 ## 📖 项目介绍
 
 > 当一次悄无声息的 Full GC 拖垮线上服务，当内存泄漏在深夜慢慢吞噬堆空间——你需要的不是事后复盘，而是**此刻可见**。
@@ -90,6 +113,38 @@
 | ECharts | 监控图表可视化 |
 | LayUI + Bootstrap | UI 框架 |
 | SockJS + STOMP | WebSocket 实时通信 |
+
+### 🚩 技术旗帜墙 · 全部点亮
+
+<div align="center">
+
+**🎌 后端军团 🎌**
+
+[![Java](https://img.shields.io/badge/Java-8-orange.svg?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.x-brightgreen.svg?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Spring WebMVC](https://img.shields.io/badge/Spring%20MVC-5-brightgreen.svg?logo=spring&logoColor=white)](https://spring.io/projects/spring-framework)
+[![Maven](https://img.shields.io/badge/Maven-3.x-red.svg?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![MyBatis-Plus](https://img.shields.io/badge/MyBatis--Plus-3.0-blue.svg)](https://baomidou.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-5.7+-blue.svg?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![OSHI](https://img.shields.io/badge/OSHI-3.9-green.svg)](https://github.com/oshi/oshi)
+[![JMX](https://img.shields.io/badge/JMX-Embedded-critical.svg)](https://docs.oracle.com/javase/8/docs/technotes/guides/jmx/)
+[![Quartz](https://img.shields.io/badge/Quartz-2.x-yellowgreen.svg)](https://www.quartz-scheduler.org/)
+[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-orange.svg?logo=thymeleaf&logoColor=white)](https://www.thymeleaf.org/)
+[![FastJSON](https://img.shields.io/badge/FastJSON-1.2-blue.svg)](https://github.com/alibaba/fastjson)
+[![Gson](https://img.shields.io/badge/Gson-2.8-informational.svg?logo=json&logoColor=white)](https://github.com/google/gson)
+[![HttpClient](https://img.shields.io/badge/HttpClient-4.x-yellow.svg?logo=apache&logoColor=white)](https://hc.apache.org/)
+
+**🎌 前端军团 🎌**
+
+[![Vue](https://img.shields.io/badge/Vue.js-2.x-brightgreen.svg?logo=vuedotjs&logoColor=white)](https://v2.vuejs.org/)
+[![ECharts](https://img.shields.io/badge/ECharts-5-red.svg?logo=apacheecharts&logoColor=white)](https://echarts.apache.org/)
+[![LayUI](https://img.shields.io/badge/LayUI-2.x-1E9FFF.svg)](https://layui.dev/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-4-purple.svg?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![jQuery](https://img.shields.io/badge/jQuery-3-blue.svg?logo=jquery&logoColor=white)](https://jquery.com/)
+[![WebSocket](https://img.shields.io/badge/WebSocket-STOMP-blueviolet.svg)](https://spring.io/guides/gs/messaging-stomp-websocket/)
+[![SockJS](https://img.shields.io/badge/SockJS-1.x-lightgrey.svg)](https://github.com/sockjs/sockjs-client)
+
+</div>
 
 ## 📊 监控指标
 

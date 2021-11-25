@@ -1,15 +1,17 @@
 <div align="center">
 
 ```
-      ___      ____  __   __  __             _ _
-     | \ \    / /  \/  | |  \/  |           (_) |
-     | |\ \  / /| \  / | | \  / | ___  _ __  _| |_ ___  _ __
- _   | | \ \/ / | |\/| | | |\/| |/ _ \| '_ \| | __/ _ \| '__|
-| |__| |  \  /  | |  | | | |  | | (_) | | | | | || (_) | |
- \____/    \/   |_|  |_| |_|  |_|\___/|_| |_|_|\__\___/|_|
+     ██╗██╗   ██╗███╗   ███╗    ███╗   ███╗ ██████╗ ███╗   ██╗██╗████████╗ ██████╗ ██████╗ 
+     ██║██║   ██║████╗ ████║    ████╗ ████║██╔═══██╗████╗  ██║██║╚══██╔══╝██╔═══██╗██╔══██╗
+     ██║██║   ██║██╔████╔██║    ██╔████╔██║██║   ██║██╔██╗ ██║██║   ██║   ██║   ██║██████╔╝
+██   ██║╚██╗ ██╔╝██║╚██╔╝██║    ██║╚██╔╝██║██║   ██║██║╚██╗██║██║   ██║   ██║   ██║██╔══██╗
+╚█████╔╝ ╚████╔╝ ██║ ╚═╝ ██║    ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║   ██║   ╚██████╔╝██║  ██║
+ ╚════╝   ╚═══╝  ╚═╝     ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
 ```
 
-**Agent 探针采集 + Monitor 可视化，一站式 JVM / 操作系统监控平台**
+**轻若无形 · 察于未萌 —— 企业级 JVM 全链路可观测性平台**
+
+一针探针，洞察虚拟机每一次呼吸；一方大屏，掌控集群每一寸资源。
 
 [![Java](https://img.shields.io/badge/Java-8-orange.svg?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.x-brightgreen.svg?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
@@ -19,7 +21,7 @@
 [![OSHI](https://img.shields.io/badge/OSHI-3.9-green.svg)](https://github.com/oshi/oshi)
 [![Quartz](https://img.shields.io/badge/Quartz-2.x-yellowgreen.svg)](https://www.quartz-scheduler.org/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-orange.svg?logo=thymeleaf&logoColor=white)](https://www.thymeleaf.org/)
-[![WebSocket](https://img.shields.io/badge/WebSocket-STOMP--blueviolet.svg)](https://spring.io/guides/gs/messaging-stomp-websocket/)
+[![WebSocket](https://img.shields.io/badge/WebSocket-STOMP-blueviolet.svg)](https://spring.io/guides/gs/messaging-stomp-websocket/)
 [![Vue](https://img.shields.io/badge/Vue.js-2.x-brightgreen.svg?logo=vuedotjs&logoColor=white)](https://v2.vuejs.org/)
 [![ECharts](https://img.shields.io/badge/ECharts-5-red.svg?logo=apacheecharts&logoColor=white)](https://echarts.apache.org/)
 [![LayUI](https://img.shields.io/badge/LayUI-2.x-1E9FFF.svg)](https://layui.dev/)
@@ -32,14 +34,16 @@
 
 ## 📖 项目介绍
 
-**Jvm-Agent-Monitor** 是一个借鉴多个优秀开源项目思想、自主开发的 JVM 探针监控 + 可视化平台，用于实时监控 JVM 运行状态与操作系统指标。
+> 当一次悄无声息的 Full GC 拖垮线上服务，当内存泄漏在深夜慢慢吞噬堆空间——你需要的不是事后复盘，而是**此刻可见**。
 
-由于探针本身由 Java 开发，因此：
+**Jvm-Agent-Monitor** 是一套自主设计研发的 **JVM 探针采集 + 实时可视化** 监控平台，覆盖从操作系统硬件到虚拟机运行时的完整指标链路，让每一次 GC 停顿、每一字节内存波动、每一个线程状态迁移都尽收眼底。
 
-- 可作为 **Maven 依赖** 无缝集成到任意 Java 项目中；
-- 也可打包为 **独立 jar** 部署在任意服务器上运行。
+探针以纯 Java 实现，践行**零侵入、双形态**的接入哲学：
 
-采集数据通过 HTTP 上报至 Monitor 平台，经 WebSocket 实时推送，最终在可视化大屏中呈现。
+- 🔩 **嵌入式** —— 一行 Maven 依赖，即刻融入任意 Java 应用；
+- 🚀 **独立式** —— 单个 jar 包，即可守护任意服务器。
+
+采集数据经 HTTP 上报至 Monitor 中枢，持久化沉淀至 MySQL，再通过 WebSocket 毫秒级推送至可视化大屏——**从堆内存到物理磁盘，全局态势一屏尽览**。
 
 ## 🏗️ 软件架构
 
@@ -57,9 +61,9 @@
 
 | 模块 | 说明 |
 | --- | --- |
-| **Jvm-Agent** | 探针模块。基于 OSHI + JMX 采集 JVM 与系统指标，可集成到 Java 项目，也可单独部署 |
-| **Jvm-Monitor** | 可视化平台。负责接收上报数据、持久化存储与实时展示。启动前需执行 `monitor.sql` |
-| **monitor.sql** | 数据库脚本。`platform` 表需配置被监控 Agent 的地址（一个或多个），`name` 字段为 Agent 所属项目名称 |
+| **Jvm-Agent** | 探针模块。基于 OSHI + JMX 双引擎采集 JVM 与系统指标，可集成到 Java 项目，也可单独部署 |
+| **Jvm-Monitor** | 可视化中枢。负责数据接收、持久化存储与实时推送。启动前需执行 `monitor.sql` |
+| **monitor.sql** | 数据库脚本。`platform` 表配置被监控 Agent 的地址（支持一对多），`name` 字段为 Agent 所属项目名称 |
 
 ## 🧰 技术栈
 
@@ -68,6 +72,7 @@
 | 技术 | 版本 | 用途 |
 | --- | --- | --- |
 | Java | 1.8 | 开发语言 |
+| Maven | 3.x | 项目构建与依赖管理 |
 | Spring Boot | 2.x | 应用框架（Web / AOP / WebSocket） |
 | OSHI Core | 3.9.1 | 操作系统硬件信息采集（CPU / 内存 / 磁盘 / 温度） |
 | JMX | - | JVM 运行时指标采集（GC / 线程 / 类加载 / 内存池） |
@@ -88,20 +93,18 @@
 
 ## 📊 监控指标
 
-### 🖥️ 操作系统
-- 系统整体负载情况
-- 物理内存（总量 / 已用 / 可用）、虚拟内存页（放入 / 放出 / 页大小）
-- 磁盘空间（总量 / 已用 / 可用）
-- CPU（核心数 / 温度 / 电压 / 风扇转速）
+### 🖥️ 操作系统 · 硬件透视
 
-### ☕ JVM
-- 新生代：Eden 区、Survivor S0 / S1 区（总量 / 可用）
-- 老年代（总量 / 可用）
-- 元空间 Metaspace（总量 / 可用）
-- 类指针压缩空间（总量 / 可用）
-- GC 统计：YGC 次数、FGC 次数、GC 耗时
-- 类加载：加载数量（成功 / 失败）、加载耗时、加载大小、编译数量、编译耗时
-- 线程状态：总数 / 运行 / 等待 / 休眠
+- **负载态势** —— 系统整体负载情况，一眼辨识资源瓶颈
+- **内存版图** —— 物理内存（总量 / 已用 / 可用）、虚拟内存页（调入 / 调出 / 页大小）
+- **存储与算力** —— 磁盘空间（总量 / 已用 / 可用）、CPU（核心数 / 温度 / 电压 / 风扇转速）
+
+### ☕ JVM · 运行时全景
+
+- **内存池** —— 新生代 Eden / Survivor S0 / S1、老年代、元空间 Metaspace、类指针压缩空间（总量 / 可用）
+- **GC 脉搏** —— YGC 次数、FGC 次数、GC 耗时，捕捉每一次停顿
+- **类加载** —— 加载数量（成功 / 失败）、加载耗时、加载大小、编译数量、编译耗时
+- **线程态势** —— 总数 / 运行 / 等待 / 休眠，线程健康尽收眼底
 
 ## 🚀 快速开始
 
@@ -152,12 +155,24 @@ mvn spring-boot:run
 
 ## 🖼️ 效果展示
 
-|  |  |
-| --- | --- |
-| ![img_0](image/img_0.png) | ![img_1](image/img_1.png) |
-| ![img_2](image/img_2.png) | ![img_3](image/img_3.png) |
-| ![img_4](image/img_4.png) | ![img_5](image/img_5.png) |
-| ![img_6](image/img_6.png) | ![img_7](image/img_7.png) |
+<table>
+<tr><td align="center"><b>监控总览大屏</b></td></tr>
+<tr><td align="center"><img src="image/img_0.png" width="900"/></td></tr>
+<tr><td align="center"><b>操作系统指标</b></td></tr>
+<tr><td align="center"><img src="image/img_1.png" width="900"/></td></tr>
+<tr><td align="center"><b>内存空间分析</b></td></tr>
+<tr><td align="center"><img src="image/img_2.png" width="900"/></td></tr>
+<tr><td align="center"><b>新生代 / 老年代监控</b></td></tr>
+<tr><td align="center"><img src="image/img_3.png" width="900"/></td></tr>
+<tr><td align="center"><b>元空间与类指针压缩</b></td></tr>
+<tr><td align="center"><img src="image/img_4.png" width="900"/></td></tr>
+<tr><td align="center"><b>GC 统计追踪</b></td></tr>
+<tr><td align="center"><img src="image/img_5.png" width="900"/></td></tr>
+<tr><td align="center"><b>类加载监控</b></td></tr>
+<tr><td align="center"><img src="image/img_6.png" width="900"/></td></tr>
+<tr><td align="center"><b>线程状态分析</b></td></tr>
+<tr><td align="center"><img src="image/img_7.png" width="900"/></td></tr>
+</table>
 
 ## 📄 License
 
@@ -167,6 +182,6 @@ mvn spring-boot:run
 
 <div align="center">
 
-如果这个项目对你有帮助，欢迎点个 **Star** ⭐ 支持一下！
+如果这个项目为你洞察了每一次 GC 的脉动，欢迎点亮一颗 **Star** ⭐ —— 这是对本项目最大的鼓励！
 
 </div>
